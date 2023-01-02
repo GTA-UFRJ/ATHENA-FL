@@ -1,0 +1,20 @@
+#!/bin/bash
+
+
+# configure the require datasets
+#DATASETS=('MNIST' 'CIFAR-10' 'FMNIST')
+DATASETS=('CIFAR-10')
+
+for DATASET_NAME in "${DATASETS[@]}"
+do
+
+	# prepare the directories
+	./scripts/build_directory $DATASET_NAME
+	
+	# download the dataset
+	python3.9 get_data.py $DATASET_NAME
+
+	# move the data to the respective directory
+	./scripts/move_dataset ../../../datasets/$DATASET_NAME/Non-IID-distribution
+
+done

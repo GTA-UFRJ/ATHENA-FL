@@ -1,0 +1,10 @@
+numpy
+sklearn
+torch
+torchvision
+pandas
+tensorflow
+keras
+scikit-images
+tensorflow_addons
+
